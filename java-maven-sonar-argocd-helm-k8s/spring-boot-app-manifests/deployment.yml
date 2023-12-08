@@ -16,13 +16,6 @@ spec:
       labels:
         app: hello
     spec:
-      affinity:
-        # ⬇⬇⬇ This ensures pods will land on separate hosts
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions: [{ key: app, operator: In, values: [hello] }]
-              topologyKey: "kubernetes.io/hostname"
       containers:
         - name: hello-from
           image: pbitty/hello-from:latest
