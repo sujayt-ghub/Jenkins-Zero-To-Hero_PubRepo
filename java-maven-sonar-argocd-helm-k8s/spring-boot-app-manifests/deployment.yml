@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: sujaysuj/ultimate-cicd1:3
+        image: nginx
         ports:
-        - containerPort: 8080
+        - containerPort: 80
