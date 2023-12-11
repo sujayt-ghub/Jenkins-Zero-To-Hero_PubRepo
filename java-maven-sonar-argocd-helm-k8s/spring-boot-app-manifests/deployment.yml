@@ -1,25 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: spring-boot-app
+  labels:
+    app: spring-boot-app
 spec:
   replicas: 2
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 100%
   selector:
     matchLabels:
-      app: hello
+      app: spring-boot-app
   template:
     metadata:
       labels:
-        app: hello
+        app: spring-boot-app
     spec:
       containers:
-        - name: hello-from
-          image: pbitty/hello-from:latest
-          ports:
-            - name: http
-              containerPort: 80
+      - name: spring-boot-app
+        image: abhishekf5/ultimate-cicd:replaceImageTag
+        ports:
+        - containerPort: 8080
+
+
+
+        
    
