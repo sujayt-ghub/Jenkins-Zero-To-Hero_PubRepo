@@ -4,6 +4,9 @@ metadata:
   name: spring-boot-app
   labels:
     app: spring-boot-app
+variables:
+  - name: NUM
+    value: replaceImageTag
 spec:
   replicas: 2
   selector:
@@ -16,7 +19,7 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: sujaysuj/ultimate-cicd:replaceImageTag
+        image: sujaysuj/ultimate-cicd:${{ variables.NUM }}
         ports:
         - containerPort: 8080
 
