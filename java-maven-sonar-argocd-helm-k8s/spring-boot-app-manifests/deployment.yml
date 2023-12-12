@@ -6,7 +6,7 @@ metadata:
     app: spring-boot-app
 variables:
   - name: NUM
-    value: replaceImageTag
+    value: 11
 spec:
   replicas: 2
   selector:
