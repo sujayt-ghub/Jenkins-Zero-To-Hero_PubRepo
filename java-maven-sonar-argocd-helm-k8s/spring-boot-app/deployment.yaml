@@ -19,15 +19,10 @@ spec:
         image: 'sujaysuj/ultimate-cicd1:$TAG1'
         ports:
         - containerPort: 8080
-
-type: ShellScript
-                  name: Kubectl scale blue green
-                  identifier: Kubectl_scale_blue_green
-                  spec:
-                    shell: Bash
-                    onDelegate: true
-                    source:
-                      type: Inline
-                      spec:
-                        script: |-
-                          envsubst < deployment.yaml | kubectl apply -f -
+    shell: Bash
+              onDelegate: true
+              source:
+                type: Inline
+                spec:
+                  script: |-
+                       envsubst < deployment.yaml | kubectl apply -f -
