@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-ap
+  labels:
+    app: spring-boot-ap
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: spring-boot-ap
+  template:
+    metadata:
+      labels:
+        app: spring-boot-ap
+    spec:
+      containers:
+      - name: spring-boot-ap
+        image: sujaysuj/ultimate-cicd1:$TAG1
+        ports:
+        - containerPort: 8080
