@@ -20,8 +20,16 @@ spec:
         ports:
         - containerPort: 8080
 
-
-
-command: ["/bin/sh"]
-    args: ["-c", "sh envsubst < deployment.yaml | kubectl apply -f -"]
-        
+---
+- step:
+     type: ShellScript
+                  name: Kubectl scale blue green
+                  identifier: Kubectl_scale_blue_green
+                  spec:
+                    shell: Bash
+                    onDelegate: true
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          envsubst < mydeploy.yaml | kubectl apply -f -
