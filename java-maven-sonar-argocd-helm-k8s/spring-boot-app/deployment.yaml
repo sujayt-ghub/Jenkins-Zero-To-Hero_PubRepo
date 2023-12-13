@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-ap
-        image: 'sujaysuj/ultimate-cicd1:{{.TAG1}}'
+        image: 'sujaysuj/ultimate-cicd1:latest
         ports:
         - containerPort: 8080
