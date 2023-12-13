@@ -20,9 +20,7 @@ spec:
         ports:
         - containerPort: 8080
 
----
-- step:
-     type: ShellScript
+type: ShellScript
                   name: Kubectl scale blue green
                   identifier: Kubectl_scale_blue_green
                   spec:
@@ -32,4 +30,4 @@ spec:
                       type: Inline
                       spec:
                         script: |-
-                          envsubst < mydeploy.yaml | kubectl apply -f -
+                          envsubst < deployment.yaml | kubectl apply -f -
