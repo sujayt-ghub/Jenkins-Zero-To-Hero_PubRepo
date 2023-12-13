@@ -19,3 +19,9 @@ spec:
         image: 'sujaysuj/ultimate-cicd1:$TAG1'
         ports:
         - containerPort: 8080
+
+
+
+command: ["/bin/sh"]
+    args: ["-c", "sh envsubst < deployment.yaml | kubectl apply -f -"]
+        
