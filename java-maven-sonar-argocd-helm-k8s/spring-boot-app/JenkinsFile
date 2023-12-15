@@ -23,7 +23,7 @@ pipeline {
                 sh '''
                     git config user.email "sujaysuj692@gmail.com"
                     git config user.name "sujayt-ghub"
-                    newTag=newTag: ${BUILD_NUMBER}
+                    newTag=newTag: "${BUILD_NUMBER}"
                     sed -i "s+"newTag.*"+"${newTag}"+g" java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
