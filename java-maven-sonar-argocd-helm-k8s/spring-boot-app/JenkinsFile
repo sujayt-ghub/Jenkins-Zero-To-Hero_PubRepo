@@ -26,7 +26,7 @@ pipeline {
                     BUILD_NUMBER1=${BUILD_NUMBER}
                     BUILD_NUMBER2= "${BUILD_NUMBER1}"
                
-                    sed -E "s+"newTag.*"+"newTag:${BUILD_NUMBER2}"+g" java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
+                    sed -E "s+"newTag.*"+"newTag:$BUILD_NUMBER2"+g" java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
