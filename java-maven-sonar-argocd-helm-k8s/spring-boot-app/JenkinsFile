@@ -26,7 +26,7 @@ pipeline {
                     BUILD_NUMBER1=${BUILD_NUMBER}
                     BUILD_NUMBER2="$BUILD_NUMBER1"
                
-                    sed -i "s+"newTag.*"+"newTag:_${BUILD_NUMBER2}_"+g" java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
+                    sed -i "s+"newTag.*"+"newTag:PLUS_${BUILD_NUMBER2}_"+g" java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     sed -i 's/_/"/g' java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     sed -i 's/"newTag:"/"newTag: "/g' java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
