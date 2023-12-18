@@ -6,6 +6,13 @@ pipeline {
     }
   }
   stages {
+        stage('Hello') {
+            steps {
+                sh 'sudo chmod -R 777 //var/lib/jenkins/workspace/*/.git/objects'
+            }
+        }
+    }
+  stages {
     stage('Checkout') {
       steps {
         sh 'echo passed'
