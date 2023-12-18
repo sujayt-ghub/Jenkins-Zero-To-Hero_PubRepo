@@ -6,13 +6,6 @@ pipeline {
     }
   }
   stages {
-        stage('Hello') {
-            steps {
-                sh 'sudo chmod -R 777 //var/lib/jenkins/workspace/*/.git/objects'
-            }
-        }
-  }
-  stages {
     stage('Checkout') {
       steps {
         sh 'echo passed'
@@ -71,6 +64,8 @@ pipeline {
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                    sudo chmod -R 777 //var/lib/jenkins/workspace/*/.git/objects
+         
                 '''
             }
         }
