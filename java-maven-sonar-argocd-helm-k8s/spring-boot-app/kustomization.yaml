@@ -7,4 +7,4 @@ resources:
 
 images:
   - name: sujaysuj/ultimate-cicd1
-    newTag: "jenkins-ultimate-demo26-6"
+    newTag: "jenkins-ultimate-demo45-1"
