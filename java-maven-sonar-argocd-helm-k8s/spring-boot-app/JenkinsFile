@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'sudo chmod -R 777 //var/lib/jenkins/workspace/*/.git/objects'
             }
-       }
+        }
   }
   stages {
     stage('Checkout') {
