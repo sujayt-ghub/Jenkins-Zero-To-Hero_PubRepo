@@ -63,7 +63,7 @@ pipeline {
                     sed -i 's/PLUS/ /g' java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git push
+                    git push https://git@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     //git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     chmod -R 777 //var/lib/jenkins/workspace/
          
