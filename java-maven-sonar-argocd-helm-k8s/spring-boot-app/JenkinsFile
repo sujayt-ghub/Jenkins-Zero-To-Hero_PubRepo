@@ -66,7 +66,6 @@ pipeline {
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git remote set-url origin https://sujayt-ghub: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@github.com/sujayt-ghub/Jenkins-Zero-To-Hero.git
                     git push origin HEAD:main
-                    //git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     chmod -R 777 //var/lib/jenkins/workspace/
          
                 '''
