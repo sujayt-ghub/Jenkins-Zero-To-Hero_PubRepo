@@ -57,13 +57,14 @@ pipeline {
                     git config user.name "sujayt-ghub"
                     BUILD_NUMBER1=${BUILD_TAG}
                     BUILD_NUMBER2="$BUILD_NUMBER1"
+                    sujaypub="$ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICUiblmoAOTFUMED0h5TGf1cJOnWm2iwEBq+dR9xJ9cB sujay050289@gmail.com"
                
                     sed -i "s+"newTag.*"+"newTag:PLUS_${BUILD_NUMBER2}_"+g" java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     sed -i 's/_/"/g' java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     sed -i 's/PLUS/ /g' java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git push https://${sujaypub_ssh}git@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                    git push https://${sujaypub}git@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     //git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     chmod -R 777 //var/lib/jenkins/workspace/
          
