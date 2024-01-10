@@ -51,7 +51,7 @@ pipeline {
             GIT_USER_NAME = "sujayt-ghub"
         }
         steps {
-            withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
+            withCredentials([string(credentialsId: 'sujaypub_ssh', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "sujaysuj692@gmail.com"
                     git config user.name "sujayt-ghub"
@@ -63,7 +63,7 @@ pipeline {
                     sed -i 's/PLUS/ /g' java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git push https://git@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
+                    git push https://${GITHUB_TOKEN}git@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     //git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     chmod -R 777 //var/lib/jenkins/workspace/
          
