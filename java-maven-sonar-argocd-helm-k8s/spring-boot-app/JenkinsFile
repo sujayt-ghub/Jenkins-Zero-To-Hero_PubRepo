@@ -64,8 +64,7 @@ pipeline {
                     sed -i 's/PLUS/ /g' java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app/kustomization.yaml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git remote set-url origin https://sujayt-ghub:ghp_c25iOH84o0lKUn48SUSVcuKhCLcWaC_0ZlBq8
-@github.com/sujayt-ghub/Jenkins-Zero-To-Hero.git
+                    git remote set-url origin https://sujayt-ghub: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@github.com/sujayt-ghub/Jenkins-Zero-To-Hero.git
                     git push origin HEAD:main
                     chmod -R 777 //var/lib/jenkins/workspace/
          
