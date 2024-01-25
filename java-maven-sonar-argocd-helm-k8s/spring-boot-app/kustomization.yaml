@@ -7,4 +7,4 @@ resources:
 
 images:
   - name: sujaysuj/ultimate-cicd1
-    newTag: "jenkins-jennkinzerotoheroproject-3"
+    newTag: "jenkins-jennkinzerotoheroproject-4"
